@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WMusic</title>
+    <link rel="stylesheet" href="alfi.css">
+    <script src="https://kit.fontawesome.com/49a55bf0fd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+        <div class="header">
+            <div class="back"><a href="index.html"><i class="fa-solid fa-house"></i></a></i></div>
+            <div class="name">
+                <img src="logoo.png">
+            </div>
+        </div>
+
+        <main>
+            <div class="list-container">
+                <div class="head">
+                    <i class="fa-solid fa-circle-play"></i>
+                    <span class="head-1">Song List</span>
+                </div>
+
+                <div class="song"><a href="alfi_satu.html">
+                    <div class="song-info">
+                        <img class="img-p" src="album/alffyrev.jpg">
+                        <h3>Wonderland Indonesia</h3>
+                        <p>Alffy Rev</p>
+                    </div>
+                </a>
+                </div>
+
+                <div class="song"><a href="alfi_dua.html">
+                    <div class="song-info">
+                        <img class="img-p" src="album/alffyrev.jpg">
+                        <h3>Wonderland Indonesia2</h3>
+                        <p>Alffy Rev</p>
+                    </div>
+                </a>
+                </div>
+
+                <div class="song"><a href="alfi_tiga.html">
+                    <div class="song-info">
+                        <img class="img-p" src="album/alffyrev.jpg">
+                        <h3>Wonderland Indonesia3</h3>
+                        <p>Alffy Rev</p>
+                    </div>
+                </a>
+                </div>
+
+                <div class="song"><a href="alfi_empat.html">
+                    <div class="song-info">
+                        <img class="img-p" src="album/alffyrev.jpg">
+                        <h3>Mother Earth</h3>
+                        <p>Alffy Rev</p>
+                    </div>
+                </a>
+                </div>
+            </div>
+
+            <div class="play-container">
+                    <div class="kepala">
+                        <span>Song-Play</span>
+                    </div>
+                    <div class="content">
+                        <div class="song-display">
+                            <img class="img-s" id="musikImg">
+                            <div class="info">
+                                <div class="song-name">
+                                    <h2 id="judul"></h2>
+                                </div>
+                                <div class="song-artist">
+                                    <h4 id="vokalis"></h4>
+                                </div>
+                            </div>
+                            
+                            <audio  id="musicPlayer">
+                                <source id="musicPlayer" type="audio/mpeg">
+                            </audio>
+
+                            <div class="timeline">
+                                <div class="slider">
+                                    <input type="range" value="0" id="proses">
+                                </div>
+                            </div>
+
+                            <div class="container-emoji">
+
+                            <div class="volum">
+                                <button class="volume"><i class="fa-solid fa-volume-high"></i></button>
+                                <div class="volslide">
+                                    <input type="range" id="volumslide" max="100" min="0" step="1">
+                                </div>
+                                
+                            </div>
+                                <div class="like-button" onclick="toggleLike(this)">
+                                    <span class="heart">&#10084;</span>
+                                </div>
+                            </div>
+
+                            <div class="controls">
+                                <div onclick="prev()"><i class="fa fa-step-backward"></i></div>
+                                <div id="playPauseId" onclick="playPause()"><i class="fa fa-play" id="cntrlicon"></i></div>
+                                <div onclick="next()"><i class="fa-solid fa-forward-step"></i></div>
+                            </div>
+
+                        </div>
+                    </div>
+            </div>          
+        </main>
+
+        <script>
+            let songs = [
+                {
+                    lagu : "musik/alffyrevwonderland2.mp3.m4a",
+                    img : "album/alffyrev.jpg",
+                    judul : "Wonderland Indonesia2",
+                    vokalis : "Alffy Rev",
+                },
+                {
+                    lagu : "musik/alffyrevwonderland3.mp3.m4a",
+                    img : "album/alffyrev.jpg",
+                    judul : "Wonderland Indonesia3",
+                    vokalis : "Alffy Rev",
+                },
+                {
+                    lagu : "musik/alffyrevmotherearth.mp3.mp3",
+                    img : "album/alffyrev.jpg",
+                    judul : "Mother Earth",
+                    vokalis : "Alffy Rev",
+                },
+                {
+                    lagu : "musik/alffyrevwonderland.mp3.m4a",
+                    img : "album/alffyrev.jpg",
+                    judul : "Wonderland Indonesia",
+                    vokalis : "Alffy Rev",
+                },
+        ];
+            const musikMenu = document.getElementById("musicPlayer");
+            const musikVokalis = document.getElementById("vokalis");
+            const musikJudul = document.getElementById("judul")
+            const playPauseId = document.getElementById("playPauseId");
+            const musikImg = document.getElementById("musikImg");
+            let index = 0;
+            function audioPlayer () {
+                let musicIndex = songs[index];
+                musikMenu.src = musicIndex.lagu;   
+                musikMenu.load();
+                musikMenu.play();
+                musikImg.src = musicIndex.img;
+                musikJudul.textContent=musicIndex.judul;
+                musikVokalis.textContent=musicIndex.vokalis;
+            }
+
+            function next() {
+                index= (index + 1) % songs.length;
+                audioPlayer();
+            }
+            function prev() {
+                index= (index - 1 + songs.length) % songs.length;
+                audioPlayer();
+            }
+
+            audioPlayer()
+
+            var proses = document.getElementById("proses");
+            var cntrlicon = document.getElementById("cntrlicon");
+            var volumslide = document.getElementById("volumslide");
+
+            volumslide.addEventListener('mousemove', setvolume);
+            
+            function setvolume() {
+                musikMenu.volume = volumslide.value / 100 ; 
+            }
+
+            function toggleLike(button) {
+            button.classList.toggle('liked');
+            }
+
+            musikMenu.onloadedmetadata = function(){
+            proses.max = musikMenu.duration;
+            proses.value = musikMenu.currentTime;
+            }
+            function playPause() {
+            if(cntrlicon.classList.contains("fa-play")){
+            musikMenu.play();
+            cntrlicon.classList.add("fa-pause");
+            cntrlicon.classList.remove("fa-play");
+            }else{
+                musikMenu.pause();
+            cntrlicon.classList.remove("fa-pause");
+            cntrlicon.classList.add("fa-play");
+            }
+            }
+
+            proses.onchange = function() {
+            musikMenu.play();
+            musikMenu.currentTime = proses.value;
+            cntrlicon.classList.add("fa-pause");
+            cntrlicon.classList.remove("fa-play");
+            }
+
+            if(musikMenu.play){
+                setInterval(()=>{
+                proses.value = musikMenu.currentTime;
+                },500)
+            }
+        </script>
+</body>
+</html>

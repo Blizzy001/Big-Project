@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lupa Password</title>
+    <style>
+        body {
+            font-family: 'times new roman', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image:  url(backbord.jpg);;
+        }
+
+        h2 {
+            text-align: center;
+            color: rgb(28, 18, 18);
+        }
+
+        form {
+            background-color: rgb(245, 249, 120);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #191a06;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #a80b0b;
+            color: rgb(250, 244, 244);
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #13140c;
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            max-width: 150px;
+            max-height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <img src="logoo.png" alt="Logo" class="logo">
+    <form action="login.html" method="post">
+        <h2>Lupa Password</h2>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="passwordLama">Old Password:</label>
+        <input type="password" id="passwordLama" name="passwordLama" required>
+
+        <label for="passwordBaru">New Password:</label>
+        <input type="password" id="passwordBaru" name="passwordBaru" required>
+
+        <button type="submit">Sumbit</button>
+    </form>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi WMusik</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:  rgb(82, 80, 80);
+            margin: 0;
+            padding: 0;
+            background-image:  url(backbord.jpg);
+        }
+
+        #registration-form {
+            width: 60%;
+            margin: 50px auto;
+            background-color: rgb(245, 249, 120);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 97%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid rgb(112, 11, 11);
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #a80b0b;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0a0909;
+        }
+
+        #logo {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+        } 
+    </style>
+</head>
+<body>
+    <div id="logo">
+        <img src="logoo.png" alt="WMusik Logo" width="150">
+    </div>
+    <div id="registration-form">
+        <h2>Registrasi WMusik</h2>
+        <form action="login.html" method="POST">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="tgl_lahir">Tanggal Lahir:</label>
+            <input type="date" id="tgl_lahir" name="tgl_lahir" required>
+
+            <label for="nomor_hp">Nomor HP:</label>
+            <input type="tel" id="nomor_hp" name="nomor_hp" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Konfirmasi</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+

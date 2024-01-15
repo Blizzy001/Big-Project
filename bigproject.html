@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <script src="https://kit.fontawesome.com/49a55bf0fd.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="music-container">
+      <div class="header">
+        <span class="action"><i class="fa fa-chevron-left"></i></span>
+         <div class="playing">Play Music</div>
+        <span class="action"><i class="fa fa-ellipsis-v"></i></span>
+      </div>
+
+      <div class="content">
+          <img src="c:\Users\ThinkPad\Desktop\Tugas Pk Hamid\ss\gear-5-1-4258712770.webp" alt=""><br>
+          <div class="music-info">
+            <div class="song-name">December - Neckdeep</div>
+            <div class="song-artist">Ben Barlow</div>
+        </div>
+       
+      <audio  id="song">
+        <source src="c:\Users\ThinkPad\Desktop\Tugas Pk Hamid\Big Project\song.bp.mp3" type="audio/mpeg">
+      </audio>  
+
+      <input type="range" value="0" id="proses">
+
+      <div class="controls">
+        <div><i class="fa fa-step-backward"></i></div>
+        <div onclick="playPause()"><i class="fa fa-play" id="cntrlicon"></i></div>
+        <div><i class="fa-solid fa-forward-step"></i></div>
+      </div>
+      </div>
+    </div>
+  </div>
+<script>
+  let proses = document.getElementById("proses");
+  let song = document.getElementById("song");
+  let cntrlicon = document.getElementById("cntrlicon");
+
+  song.onloadedmetadata = function(){
+    proses.max = song.duration;
+    proses.value = song.currentTime;
+  }
+  function playPause() {
+    if(cntrlicon.classList.contains("fa-pause")){
+      song.pause();
+      cntrlicon.classList.remove("fa-pause");
+      cntrlicon.classList.add("fa-play");
+    }else{
+      song.play();
+      cntrlicon.classList.add("fa-pause");
+      cntrlicon.classList.remove("fa-play");
+    }
+  }
+
+ proses.onchange = function() {
+  song.play();
+  song.currentTime = proses.value;
+  cntrlicon.classList.add("fa-pause");
+  cntrlicon.classList.remove("fa-play");
+ }
+
+  if(song.play){
+    setInterval(()=>{
+      proses.value = song.currentTime;
+    },500)
+  }
+
+
+</script>
+</body>
+</html>

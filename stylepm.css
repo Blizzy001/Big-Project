@@ -1,0 +1,304 @@
+* {
+    margin: 0;/*jarak luar antar komponen */
+    padding: 0;/*jarak dalam antar element */
+    font-family: sans-serif;/*mengubah jenis font menjadi sans-serif*/
+}
+
+.container {/*css untuk bagian container*/
+    height: 600px;/*mengatur tingginya adalah 600px*/
+    width: 100%;/*mengatur lebarnya adalah 100%*/
+    background-image: url(backbor.webp);/*untuk menampilkan background menggunakan image*/
+    background-size: cover;/*untu mengatur background dengan gambar lebih presisi sesuai layout*/
+    background-position: center;/*untuk mengatur posisi background image vertical maupun horizontal*/
+    position: relative;/*untuk membuat posisi suatu element bisa dipindah-pindahkan*/
+}
+
+.logo {/*css untuk mengatur konten bagian logo*/
+    width: 160px;/*mengatur lebarnya adalah 140px*/
+    cursor: pointer;/*untuk mengaktifkan atau mengontrol element tertentu dalam antarmuka pengguna grafis*/
+
+}
+
+.navbar {/*css untuk bagian header/kepala*/
+    width: 88%;/*mengatur lebarnya adalah 88%*/
+    margin: auto;/*jarak antar element diluar navigasi*/
+    padding: 5px 0;/*jarak antar element didalam navigasi*/
+    display: flex;/*untuk mengatur layout, posisi dan tampilan dari suatu konten yang ukurannya belum diketahui*/
+    align-items: center;/*untuk mengatur posisi item navbar diletakan pada tengah*/
+    justify-content: space-between;/*untuk mensejajarkan item didalam navbar yang akan memberikan jarak antar item */
+}
+
+.navbar ul li {/*css untu mengatur konten pada navbar order list*/
+    list-style: none;/*untuk menentukan gaya penanda tiap list*/
+    display: inline-block;/*mengatur lebar dan tinggi pada element*/
+    margin: 0 10px;/*jarak antar element luar navbar list*/
+    text-decoration: none;/*menghilangkan garis bawah pada link a href*/
+}
+
+.navbar ul li a {/*css untuk mengatur konten pada navbar list a*/
+    text-decoration: none;/*menghilangkan garis bawah pada link a href di list a*/
+    color: whitesmoke;/*mengatur warna pada element*/
+    font-size: 15px;/*mengatur ukuran tulisan*/
+    transition: all 0.3s ease;/*untuk mengatur efek transisi pada element*/
+}
+.navbar ul li a:hover {/*css untuk mengatur efek kursor jika diarahkan pada suatu element*/
+    color: #54a9af;/*mengatur warna pada element*/
+    padding-right: 8px;/*mengatur jarak kanan antar element diluar hover*/
+}
+
+
+.bingkai {/*css untuk mengatur konten pada bingkai*/
+
+    /*berfungsi agar teks berada di tengah*/
+    background-image: url(backborder.jpg);
+    background-size: cover;
+    /*untuk mengatur warna latar*/
+    width: 90%;
+    /*untuk mengatur lebar*/
+    height: 80%;
+    /*untuk mengatur tinggi*/
+    margin-left: 60px;/*mengatur batas kertas sebalah kiri*/
+    margin-top: 0;/*mengatur batas kertas sebelah atas*/
+    border-radius: 17px;
+    /*untuk memberi tepian suatu objek*/
+    border: 1px solid rgb(129, 172, 175);
+
+}
+
+.body-card {/*css untuk konten pada bagian body-card*/
+    padding: 10px 15px;
+    /*memberikan ruang space disekitar elemen atau konten*/
+}
+
+.footer { /*css untuk mengatur bagian footer/kaki*/
+    background-color: rgb(124, 180, 175);
+    /*warna background footer*/
+    padding: 50px 0;/*jarak antar element didalam footer*/
+}
+
+.judul-footer {/*css untuk mengatur konten pada judul-footer*/
+    text-align: center;/*mengatur posisi teks */
+    position: relative;/*untuk membuat posisi suatu element bisa dipindah-pindahkan*/
+    bottom: 30px;/*mengatur jarak sisi kanan*/
+}
+
+.container-footer {/*css untuk mengatur konten pada container-footer*/
+    max-width: 1070px;/*mengatur maximal lebar*/
+    margin: auto;/*jarak antar element luar*/
+}
+
+.row {/*css untuk mengatur konten pada row*/
+    display: flex;/*untuk mengatur layout, posisi dan tampilan dari suatu konten yang ukurannya belum diketahui*/
+    flex-wrap: wrap;/*mengatur element item didalam row tidak harus disejajarkan dalam satu baris*/
+}
+
+ul {/*css mengatur konten pada unordered list*/
+    list-style: none;/*untuk menentukan gaya penanda tiap list*/
+}
+
+.footer-col {/*css mengatur konten pada footer-col*/
+    text-align: center;/*mengatur posisi teks */
+    width: 17%; /*untuk mengatur lebar*/
+    padding: 0 15px;/*jarak antar element didalam footer-col*/
+    padding-left: 13px;/*mengatur jarak kiri antar element didalam footer-col*/
+
+}
+
+.footer-col h4 a {/*css mengatur konten pada footer-col dan heading 4 a*/
+    font-size: 16px;/*mengatur ukuran font*/
+    text-transform: capitalize;/*memanipulasi teks untuk huruf besar pada awal kata*/
+    color: #b9528b;/*mengatur warna pada element*/
+    text-decoration: none;/*menghilangkan garis bawah pada link a href*/
+    font-weight: 300;/*mengatur ketebalan font*/
+    color: #000000;/*mengatur warna pada elemet*/
+    margin-bottom: 10px;/*memberikan jarak dibagia atas kertas*/
+    display: block;/*mengatur element kebawah*/
+    transition: all 0.3s ease;/*untuk mengatur efek transisi pada element*/
+}
+
+.footer-col h4 a:hover {/*css mengatur konten pada footer-col, heading 4 dan hover*/
+    color: #c5729c;/*mengatur warna pada element*/
+    padding-bottom: 8px;/*mengatur jarak sisi bawah*/
+}
+
+.footer-col h4 {/*css mengatur konten pada footer-col, heading 4*/
+    font-size: 18px;/*mengatur ukuran tulisan*/
+    color: #b94d99;/*mengatur warna pada element*/
+    text-transform: capitalize;/*memanipulasi teks untuk huruf besar pada awal kata*/
+    margin-bottom: 30px;/*memberikan jarak dibagia atas kertas*/
+    font-weight: 500;/*mengatur ketebalan font*/
+    position: relative;/*untuk membuat posisi suatu element bisa dipindah-pindahkan*/
+}
+
+.footer-col h4::before {
+    content: '';/*menyisipkan sebuah karakter lain kedalam tag*/
+    position: absolute;/*untuk menghapus element dari wadah div*/
+    left: 60px;/*jarak kiri element*/
+    bottom: -10px;/*jarak bawah element*/
+    background-color: rgb(204, 146, 166);/*mengatur warna background*/
+    height: 2px; /*untuk mengatur tinggi*/
+    box-sizing: border-box;/*untuk merubah kalkulasi dalam mengukur lebar element*/
+    width: 60px;/*untuk mengatur lebar*/
+}
+
+.footer-col ul li a {/*css mengatur konten footer-col ul li  a*/
+    font-size: 16px;/*mengatur ukuran tulisan*/
+    text-transform: capitalize;/*memanipulasi teks untuk huruf besar pada awal kata*/
+    color: #ffffff;/*mengatur warna pada element*/
+    text-decoration: none;/*memberikan dekorasi garis pada teks*/
+    font-weight: 300;/*mengatur ketebalan font*/
+    color: whitesmoke;/*mengatur warna pada element*/
+    margin-bottom: 10px;/*memberikan jarak dibagia atas kertas*/
+    display: block;/*mengatur element kebawah*/
+    transition: all 0.3s ease;/*untuk mengatur efek transisi pada element*/
+}
+
+.footer-col ul li a:hover {/*css mengatur konten pada footer-col ul li hover*/
+    color: #be609a;/*mengatur warna pada element*/
+    padding-left: 8px;/*mengatur jarak kiri antar element didalam footer-col ul li hover*/
+}
+
+.album {/*css mengatur konten pada album*/
+    display: flex;/*untuk mengatur layout, posisi dan tampilan dari suatu konten yang ukurannya belum diketahui*/
+    flex-wrap: wrap;/*mengatur element item didalam row tidak harus disejajarkan dalam satu baris*/
+}
+
+.gambar-album {/*css mengatur konten pada gambar-album*/
+    margin-left: 20px;/*mengatur batas kertas sebalah kiri*/
+    margin-top: 20px;/*mengatur batas kertas sebelah atas*/
+    position: relative;/*untuk membuat posisi suatu element bisa dipindah-pindahkan*/
+    width: 200px;/*untuk mengatur lebar*/
+    height: 200px;/*untuk mengatur tinggi*/
+    transition: all 0.5s ease;/*untuk mengatur efek transisi pada element*/
+}
+
+.deskripsi a img:hover {/*css mengatur konten pada deskripsi a img hover*/
+    color: #c46097;/*mengatur warna pada element*/
+    margin-bottom: 8px;/*memberikan jarak dibagian atas kertas*/
+    transform: scale(1.1);/*untuk mengubah size, memutar,melengkungkan sebuah object yang berada diatas object lain*/
+}
+
+.deskripsi {/*css  mengatur konten pada deskripsi*/
+    position: relative;/*untuk membuat posisi suatu element bisa dipindah-pindahkan*/
+}
+
+.deskripsi p {/*css mengatur konten pada deskripsi paragraf*/
+    text-align: center;/*mengatur posisi teks*/
+    margin-left: 10px;/*mengatur batas kertas sebalah kiri*/
+    margin-top: 5px;/*mengatur batas kertas sebelah atas*/
+}
+.deskripsi h4 {/*css mengatur konten pada deskripsi heading 4*/
+    text-align: center;/*mengatur posisi teks*/
+    margin-left: 10px;/*mengatur batas kertas sebalah kiri*/
+}
+
+.judul-bingkai {/*css mengatur konten pada judul-bingkai*/
+    text-align: center;/*mengatur posisi teks*/
+    font-size: 30px;/*mengatur ukuran tulisan*/
+    margin-top: 20px;/*mengatur batas kertas sebelah atas*/
+    font-family: Helvetica;
+}
+
+.wrapper .sidebar{/*css mengatur konten pada wrapper dan sidebar*/
+    background:none;/*mengatur background*/
+    position:absolute;/*untuk menghapus element dari wadah div*/
+    top: 0;/*mengatur batas kertas sebelah atas*/
+    left: 0;/*mengatur batas kertas sebelah kiri*/
+    width: 40px;/*untuk mengatur lebar*/
+    height: 100%;/*untuk mengatur tinggi*/
+    padding-left: 10px;/*mengatur jarak kiri antar element didalam wrapper dan sidebar*/
+}
+
+wrapper .sidebar .profile{/*css mengatur konten pada wrapper,sidebar dan profile*/
+    margin-bottom: 30px;/*memberikan jarak dibagian atas kertas*/
+    text-align: center;/*mengatur posisi teks*/
+    
+}
+
+.wrapper .sidebar .profile img{/*css mengatur konten pada wrapper, sidebar dan profile img*/
+    display: block;/*mengatur element kebawah*/
+    width: 30px;/*untuk mengatur lebar*/
+    height: 30px;/*untuk mengatur tinggi*/
+    padding-top: 20px;/*mengatur jarak bagian bawah antar element didalam wrapper sidebar dan profile img*/
+    transition: all 0.5s ease; /*untuk mengatur efek transisi pada element*/
+}
+.wrapper .sidebar .profile img:hover{/*css mengatur konten pada wrapper, sidebar dan profile img hover*/
+    padding-left: 10px;/*mengatur jarak kiri antar element */
+}
+.footer-col h4 a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ca66a4;
+    text-decoration: none;
+    font-weight: 300;
+    color: whitesmoke;
+    margin-bottom: 10px;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  .footer-col h4 a:hover{
+    color: #ffffff;
+    padding-bottom: 8px;
+  }
+  .footer-col h4{
+    font-size: 18px;
+    color:#ffffff;
+    text-transform:capitalize;
+    margin-bottom: 30px;
+    font-weight: 500;
+    position: relative;
+  }
+  .footer-col h4::before{
+    content: '';
+    position:absolute;
+    left: 60px;
+    bottom: -10px;
+    background-color: cornsilk;
+    height: 2px;
+    box-sizing:border-box;
+    width: 60px;
+  }
+  .footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #000000;
+    margin-bottom: 10px;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  .footer-col ul li a:hover{
+    color: #ffffff;
+    padding-left: 8px;
+  }
+  
+  .wrapper .sidebar{
+      background:none;
+      position:absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 100%;
+      
+      padding-left: 10px;
+  }
+  
+  wrapper .sidebar .profile{
+      margin-bottom: 30px;
+      text-align: center;
+      
+  }
+  
+  .wrapper .sidebar .profile img{
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding-top: 20px;
+    transition: all 0.5s ease;
+  }
+  .wrapper .sidebar .profile img:hover{
+    padding-left: 10px;
+  }
+

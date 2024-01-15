@@ -1,0 +1,168 @@
+*,
+*::before
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-image: linear-gradient(to right, #ff865e 10%, #1db9c3 100%);
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    display: flex;
+    width: 100%;
+}
+
+.wrapp {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 15px;
+    width: 100%;
+    height: 30px;
+    background-color: rgb ( 0, 0, 0,);
+    background-color: rgba( 0, 0, 0, 0.4);
+}
+
+.merk {
+    display: flex;
+    flex-direction: row;
+}
+
+.firstname {
+    color: #fff;
+    font-weight: 800;
+}
+
+.lastname {
+    color: tomato;
+    padding-left: 4px;
+    font-weight: 400;
+}
+
+.container {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(16,1fr);
+    margin: 100px 5px;
+    padding-bottom: 100px;
+    position: relative;
+    width: 100%;
+}
+
+.card {
+    width: 50%;
+    height: auto;
+    grid-column: span 10;
+    margin: 30px 0;
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    background-image: linear-gradient(to right, #fff 0%, #f5f1cd 100%);
+    box-shadow: rgba (0, 0, 0, 0) 0px, 5px, 15px;
+    margin-left: 50%;
+}
+
+.action{
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.action i {
+    width: 20px;
+    font-size: 20px;
+}
+
+.fa-elipsis-v {
+    color: rgb(164, 36, 250);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin: 8px 0 24px;
+}
+.header .playing {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.album-cover {
+    margin-bottom: 24px;
+}
+
+.album-cover img {
+    display: block;
+    margin: auto;
+    width: 60%;
+    height: 170px;
+    border-radius: 50%;
+    box-shadow: rgba( 50, 50, 93, 0, 25) 0px 30px 60 px -12px, rgba( 0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.music-info {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.music-info .song-name {
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.music-info .song-artist {
+    color: grey;
+    font-size: 12px;
+}
+
+.timeline .time {
+    font-size: 12px;
+}
+
+.timeline .time .current {
+    float: left;
+}
+
+.timeline .time .total {
+    float: right;
+}
+
+.timeline .time:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.timeline .slider {
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: grey;
+    cursor: pointer;
+    position: relative;
+}
+
+.timeline .slider .progress {
+    width: 30%;
+    height: 100%;
+    pointer-events: none;
+    background-color: #e74c3c;
+    position: absolute;
+}
+
+.timeline .slider .progress .pin {
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    pointer-events: all;
+    background-color: black;
+    position: absolute;
+    right: -5px;
+    top: -3px;
+}
+
